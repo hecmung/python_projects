@@ -10,7 +10,7 @@ class GuessingAgent:
         return (self.min_range + self.max_range) // 2  # Devuelve el punto medio del rango.
 
 def main():
-    print("Bienvenido al juego 'Adivina el número'!")
+    print("Bienvenido al juego 'Adivina el número 1-100'!")
     min_range = 1
     max_range = 100
     agent = GuessingAgent(min_range, max_range)
@@ -18,6 +18,11 @@ def main():
     while True:
         agent_guess = agent.guess()
         print(f"El agente adivina: {agent_guess}")
+        # Verificación del rango minimo y maximo
+        if agent_guess == agent.min_range or agent_guess == agent.max_range:
+            print("El agente ha adivinado el número correctamente!")
+            break
+
         user_response = input("Es demasiado alto (A), demasiado bajo (B) o correcto (C)?").upper()
         if user_response == "A":
             agent.max_range = agent_guess - 1
