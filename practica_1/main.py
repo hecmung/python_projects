@@ -1,6 +1,5 @@
 # Ustedes deberán realizar los cambios en caso de ser necesarios
 # para quitar los errores y obtener la ejecución del agente inteligente
-import random
 
 class GuessingAgent:
     def __init__(self, min_range, max_range):
@@ -8,13 +7,12 @@ class GuessingAgent:
         self.max_range = max_range
 
     def guess(self):
-        return random.randint(self.min_range, self.max_range)
+        return (self.min_range + self.max_range) // 2  # Devuelve el punto medio del rango.
 
 def main():
     print("Bienvenido al juego 'Adivina el número'!")
     min_range = 1
     max_range = 100
-    number_to_guess = random.randint(min_range, max_range)
     agent = GuessingAgent(min_range, max_range)
 
     while True:
