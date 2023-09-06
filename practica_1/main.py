@@ -19,7 +19,7 @@ def main():
         agent_guess = agent.guess()
         print(f"El agente adivina: {agent_guess}")
         # Verificación del rango minimo y maximo
-        if agent_guess == agent.min_range or agent_guess == agent.max_range:
+        if agent_guess == 1 or agent_guess == 100:
             print("El agente ha adivinado el número correctamente!")
             break
 
