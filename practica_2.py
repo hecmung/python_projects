@@ -1,6 +1,6 @@
 import stanza
 
-# stanza.download('es')  # Comentar esta línea después de la primera ejecución
+stanza.download('es')  # Comentar esta línea después de la primera ejecución
 
 # Crear un pipeline NLP para el idioma español con los procesadores especificados
 nlp = stanza.Pipeline(lang='es', processors='tokenize,mwt,pos,lemma')
@@ -30,7 +30,7 @@ with open("pinocho.txt", "r", encoding="utf-8") as file:
             processed_content.extend(processed_line)  # Usamos extend para añadir todas las frases de la línea
 
 # Guardar el contenido original y procesado en un nuevo archivo
-with open("pinocho_resultado_1.txt", "w", encoding="utf-8") as file:
+with open("pinocho_resultado.txt", "w", encoding="utf-8") as file:
     # Escribir el contenido original primero
     with open("pinocho.txt", "r", encoding="utf-8") as original:
         file.write(original.read())
