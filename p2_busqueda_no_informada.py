@@ -29,6 +29,11 @@ pila.append(origen)
 
 # Paso 2: MIENTRAS LA PILA NO ESTE VACÍA
 while pila:
+    # Muestra el estado actual de 'visitados' y 'pila'
+    print(f"Visitados: {visitados}")
+    print(f"Pila: {pila}")
+    print("-" * 50)
+
     # Paso 3: SACAMOS EL PRIMER VÉRTICE, ESTE SERÁ AHORA EL VÉRTICE ACTUAL
     actual = pila.pop(0)
 
@@ -44,3 +49,4 @@ while pila:
             if vecino not in visitados and vecino not in pila:
                 # AGREGAR EL VÉRTICE A LA PILA
                 pila.append(vecino)
+    print()
