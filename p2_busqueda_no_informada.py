@@ -19,18 +19,18 @@ for key, lista in grafo.items():
 print()
 
 visitados = []
-cola = []
+pila = []
 
 origen = input("Ingresa un nodo: ")
 print("\nLista de recorrido en anchura\n")
 
-# Paso 1: SE COLOCA EL VÉRTICE ORIGEN EN UNA COLA
-cola.append(origen)
+# Paso 1: SE COLOCA EL VÉRTICE ORIGEN EN UNA PILA
+pila.append(origen)
 
-# Paso 2: MIENTRAS LA COLA NO ESTE VACÍA
-while cola:
+# Paso 2: MIENTRAS LA PILA NO ESTE VACÍA
+while pila:
     # Paso 3: SACAMOS EL PRIMER VÉRTICE, ESTE SERÁ AHORA EL VÉRTICE ACTUAL
-    actual = cola.pop(0)
+    actual = pila.pop(0)
 
     # Paso 4: SI EL VÉRTICE ACTUAL NO HA SIDO VISITADO
     if actual not in visitados:
@@ -41,6 +41,6 @@ while cola:
         # Paso 7: PARA CADA VÉRTICE QUE EL VÉRTICE ACTUAL TIENE COMO DESTINO
         for vecino, _ in grafo[actual]:
             # Y QUE NO HA SIDO VISITADO
-            if vecino not in visitados and vecino not in cola:
-                # AGREGAR EL VÉRTICE A LA COLA
-                cola.append(vecino)
+            if vecino not in visitados and vecino not in pila:
+                # AGREGAR EL VÉRTICE A LA PILA
+                pila.append(vecino)
